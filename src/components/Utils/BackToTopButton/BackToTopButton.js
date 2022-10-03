@@ -1,6 +1,7 @@
+import './styles.css';
+
 import { useEffect, useState } from 'react';
 import { BsFillArrowUpSquareFill } from 'react-icons/bs';
-import './styles.css'
 
 export default function BackToTopButton() {
 
@@ -16,6 +17,11 @@ export default function BackToTopButton() {
         }
     };
 
+    const handleScrollToTop = () => {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    };
+
     useEffect(() => {
 
         window.addEventListener('scroll', toggleVisible);
@@ -29,6 +35,7 @@ export default function BackToTopButton() {
                 bg-goldenYellow 
                 rounded" 
             style={{ display: isVisible ? 'inline-block' : 'none' }}
+            onClick={() => handleScrollToTop()}
         />
     )
 }

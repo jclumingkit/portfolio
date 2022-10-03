@@ -1,47 +1,16 @@
-import { useEffect, useState } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import { BsFillArrowUpRightSquareFill } from 'react-icons/bs';
-
 import './styles.css';
 import projects from './data';
 
+import { useRef } from 'react';
+import { motion, useInView } from "framer-motion";
+import { Container, Row } from 'react-bootstrap';
+import { BsFillArrowUpRightSquareFill } from 'react-icons/bs';
+
+import animateCol from './animate';
 
 export default function Projects({refProps}) {
-    const [projectsData, setProjectsData] = useState('');
-
-    function handleData() {
-        setProjectsData(projects.map(({title, description, path, tech}, index) => {
-            return(
-                <Col
-                    key={index}
-                    className="bg-darkBlue 
-                    text-white 
-                    rounded-5
-                    p-5"
-                >
-                    <a href={path}>
-                        <h1 className="text-goldenYellow">
-                            {title} 
-                            <span className="text-neonBlue"> <BsFillArrowUpRightSquareFill /></span>
-                        </h1>
-                    </a>
-                    <ul>
-                        {   description.map((line, index) => {
-                                return(
-                                    <li key={index}>{line}</li>
-                                )
-                            })
-                        }
-                    </ul>
-                    <h6 className="text-neonBlue">{tech.join(", ")}</h6>
-                </Col>
-            )
-        }))
-    }
-
-    useEffect(() => {
-        handleData();
-    }, [])
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
 
     return(
         <Container
@@ -58,17 +27,22 @@ export default function Projects({refProps}) {
                     w-100 
                     justify-content-center"
             >
-                <Col
-                    className="d-flex
+                <motion.div
+                    className="col
+                    d-flex
                     justify-content-center
                     align-items-center
                     bg-neonBlue
                     rounded-5"
                     style={{ height: "100px" }}
+                    variants={animateCol(0)}
+                    initial="hidden"
+                    animate={ isInView ? 'show' : ''}
                 >
-                    <h1 className="text-pink">Projects</h1>
-                </Col>
+                    <h1 className="text-darkBlue">Projects</h1>
+                </motion.div> 
             </Row>
+
             <Row 
                 className="w-100 
                 d-flex
@@ -76,7 +50,39 @@ export default function Projects({refProps}) {
                 gap-2
                 align-items-center"
             >
-                {projectsData}
+                {   projects.map(({title, description, path, tech}, index) => {
+                        return(
+                            <motion.div
+                                key={index}
+                                ref={ref}
+                                className="col
+                                bg-darkBlue 
+                                text-white 
+                                rounded-5
+                                p-5"
+                                initial="hidden"
+                                variants={animateCol(++index / 1.5)}
+                                animate={ isInView ? 'show' : ''}
+                            >
+                                <a href={path}>
+                                    <h1 className="text-goldenYellow">
+                                        {title} 
+                                        <span className="text-neonBlue"> <BsFillArrowUpRightSquareFill /></span>
+                                    </h1>
+                                </a>
+                                <ul className="mt-2">
+                                    {   description.map((line, index) => {
+                                            return(
+                                                <li key={index}>{line}</li>
+                                            )
+                                        })
+                                    }
+                                </ul>
+                                <h6 className="text-pastelGreen mt-2">{tech.join(", ")}</h6>
+                            </motion.div>
+                        )
+                    })
+                }
             </Row>
         </Container>
     )
