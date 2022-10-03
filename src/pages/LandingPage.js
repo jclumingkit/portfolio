@@ -4,13 +4,14 @@ import { Container } from 'react-bootstrap';
 import Hero from '../components/Hero/Hero';
 import Projects from '../components/Projects/Projects';
 
-function App() {
-  return (
-    <Container fluid>
-      <Hero />
-      <Projects />
-    </Container>
-  );
+function LandingPage() {
+
+    return (
+        <Container fluid={true}>
+            <Hero />
+            <Projects />
+        </Container>
+    );
 }
 
-export default App;
+export default LandingPage;

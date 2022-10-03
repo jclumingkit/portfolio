@@ -1,6 +1,7 @@
 import './styles.css';
 
 export default function Hero() {
+
     return(
         <div 
         className="hero-section 
@@ -14,17 +15,18 @@ export default function Hero() {
         
             <div 
             className="module 
-                bg-darkBlue
                 d-flex
                 flex-column
                 justify-content-between
-                p-3"
+                p-3
+                rounded-5
+                bg-darkBlue"
             >
-                <div className="text-neonBlue">
+                <div className="text-goldenYellow">
                     <h1>hi, i'm</h1>
                     <h1>jaycee</h1>
                 </div>
-                <p className="text-goldenYellow">full stack web developer</p>
+                <p className="text-neonBlue">full stack web developer</p>
             </div>
 
             <div 
@@ -36,28 +38,31 @@ export default function Hero() {
                 <div className="h-50 
                     d-flex gap-2"
                 >
-                    <div className="w-50 
-                        sub-module 
+                    <div 
+                        className="w-50 
+                        p-3
+                        rounded-5
                         bg-neonBlue 
-                        text-darkBlue 
-                        p-3"
+                        text-pink"
                     >
                         <h5>PROJECTS</h5>
                     </div>
-                    <div className="w-50 
-                        sub-module 
+                    <div 
+                        className="w-50 
+                        p-3
+                        rounded-5
                         bg-pastelGreen 
-                        text-darkBlue 
-                        p-3"
+                        text-darkBlue"
                     >
                         <h5>SKILLS</h5>
                     </div>
                 </div>
-                <div className="h-50 
-                    sub-module 
+                <div 
+                    className="h-50
+                    p-3
+                    rounded-5
                     bg-goldenYellow 
-                    text-darkBlue 
-                    p-3"
+                    text-darkBlue"
                 >
                     <h1 style={{ fontSize: "36px" }}>CONTACT ME</h1>
                 </div>

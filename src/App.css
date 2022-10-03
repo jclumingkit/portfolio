@@ -36,3 +36,13 @@
     color: #001054;
 }
 
+.text-pink {
+    color: #D800A6;
+}
+
+/* border */
+
+.rounded-2 {
+    border-radius: 2rem;
+}
+

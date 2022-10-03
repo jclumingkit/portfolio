@@ -6,7 +6,6 @@
 .module {
     width: 300px;
     height: 300px;
-    border-radius: 24px;
 }
 
 .module h1 {
@@ -15,8 +14,4 @@
 
 .module p {
     font-size: 24px;
-}
-
-.sub-module {
-    border-radius: 24px;
 }
