@@ -1,7 +1,6 @@
-.container-fluid {
+.container {
     width: 100vw;
     height: 100vh;
-    padding: 0;
 }
 
 /* custom css */
@@ -23,6 +22,10 @@
     background-color: #1CD6CE;
 }
 
+.bg-pink {
+    background-color: #D800A6;
+}
+
 /* text */
 .text-neonBlue {
     color: #31E1F7;
@@ -38,6 +41,10 @@
 
 .text-pink {
     color: #D800A6;
+}
+
+.text-pastelGreen {
+   color: #1CD6CE;
 }
 
 /* border */

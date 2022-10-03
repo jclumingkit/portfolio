@@ -1,17 +1,21 @@
+import { Stack } from 'react-bootstrap';
+import { RiGitlabFill } from 'react-icons/ri';
+import { BsLinkedin, BsGithub } from 'react-icons/bs';
 import './styles.css';
 
-export default function Hero() {
+export default function Hero({refProps}) {
+    const handleScrollTo = (idx) => refProps.current[idx].scrollIntoView({ behavior: 'smooth', block: 'start' });
 
     return(
         <div 
-        className="hero-section 
-            d-flex
-            flex-column
-            flex-md-row
-            justify-content-center
-            align-items-center
-            gap-2"
-        >
+            className="hero-section 
+                d-flex
+                flex-column
+                flex-md-row
+                justify-content-center
+                align-items-center
+                gap-2"
+            >
         
             <div 
             className="module 
@@ -19,14 +23,21 @@ export default function Hero() {
                 flex-column
                 justify-content-between
                 p-3
+                p-xl-5
                 rounded-5
                 bg-darkBlue"
             >
                 <div className="text-goldenYellow">
-                    <h1>hi, i'm</h1>
-                    <h1>jaycee</h1>
+                    <h1>hi, i'm jaycee</h1>
+                    <p className="text-neonBlue">full stack web developer</p>
                 </div>
-                <p className="text-neonBlue">full stack web developer</p>
+                <div className="text-goldenYellow">
+                    <Stack direction="horizontal" gap={3}>
+                        <RiGitlabFill size={32} />
+                        <BsLinkedin size={32} />
+                        <BsGithub size={32} />
+                    </Stack>
+                </div>
             </div>
 
             <div 
@@ -43,7 +54,8 @@ export default function Hero() {
                         p-3
                         rounded-5
                         bg-neonBlue 
-                        text-pink"
+                        text-darkBlue"
+                        onClick={() => handleScrollTo(0)}
                     >
                         <h5>PROJECTS</h5>
                     </div>

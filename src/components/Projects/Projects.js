@@ -6,19 +6,18 @@ import './styles.css';
 import projects from './data';
 
 
-export default function Projects() {
+export default function Projects({refProps}) {
     const [projectsData, setProjectsData] = useState('');
 
     function handleData() {
         setProjectsData(projects.map(({title, description, path, tech}, index) => {
             return(
-                <Col lg={6}
+                <Col
                     key={index}
                     className="bg-darkBlue 
                     text-white 
                     rounded-5
-                    p-3 
-                    p-md-5"
+                    p-5"
                 >
                     <a href={path}>
                         <h1 className="text-goldenYellow">
@@ -46,19 +45,20 @@ export default function Projects() {
 
     return(
         <Container
-            className="d-flex 
+            className="
+                d-flex 
                 flex-column 
                 align-items-center 
                 p-2
                 p-md-5"
-            fluid={true}
-            >
+                ref={(ref) => refProps.current[0] = ref}
+        >
             <Row 
                 className="mb-3 
                     w-100 
                     justify-content-center"
             >
-                <Col lg={6}
+                <Col
                     className="d-flex
                     justify-content-center
                     align-items-center
