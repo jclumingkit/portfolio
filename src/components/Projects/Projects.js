@@ -1,7 +1,7 @@
 import './styles.css';
 import projects from './data';
 
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion, useInView } from "framer-motion";
 import { Container, Row } from 'react-bootstrap';
 import { BsFillArrowUpRightSquareFill } from 'react-icons/bs';
@@ -9,8 +9,12 @@ import { BsFillArrowUpRightSquareFill } from 'react-icons/bs';
 import animateCol from './animate';
 
 export default function Projects({refProps}) {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true });
+    const titleRef = useRef(null);
+    const isInView = useInView(titleRef, { once: true });
+
+    useEffect(() => {
+        console.log(titleRef)
+    }, [isInView])
 
     return(
         <Container
@@ -20,7 +24,7 @@ export default function Projects({refProps}) {
                 align-items-center 
                 p-2
                 p-md-5"
-                ref={(ref) => refProps.current[0] = ref}
+            ref={(ref) => refProps.current[0] = ref}
         >
             <Row 
                 className="mb-3 
@@ -38,6 +42,7 @@ export default function Projects({refProps}) {
                     variants={animateCol(0)}
                     initial="hidden"
                     animate={ isInView ? 'show' : ''}
+                    ref={titleRef}
                 >
                     <h1 className="text-darkBlue">Projects</h1>
                 </motion.div> 
@@ -54,7 +59,6 @@ export default function Projects({refProps}) {
                         return(
                             <motion.div
                                 key={index}
-                                ref={ref}
                                 className="col
                                 bg-darkBlue 
                                 text-white 
