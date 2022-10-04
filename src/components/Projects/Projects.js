@@ -3,40 +3,39 @@ import projects from './data';
 
 import { useRef } from 'react';
 import { motion, useInView } from "framer-motion";
-import { Container, Col } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import { BsFillArrowUpRightSquareFill } from 'react-icons/bs';
 
 import { animateParent, animateChild } from './animateVariants';
 
 export default function Projects({refProps}) {
-    const rowRef = useRef(null);
-    const isInView = useInView(rowRef, { once: true });
+    const colRef = useRef(null);
+    const isInView = useInView(colRef, { once: true });
 
     return(
         <Container
             className="p-3 p-md-5"
             ref={(ref) => refProps.current[0] = ref }    
         >
-            <motion.div 
-                className="row h-100 my-auto"
-                variants={animateParent}
-                initial="hidden"
-                animate={ isInView ? "show" : "" }
-                ref={rowRef}
+            <Row className="h-100 my-auto"
             >
-                <Col 
-                    className="
-                    d-flex
-                    flex-column
-                    justify-content-center
-                    gap-2"
+                <motion.div 
+                    className="col
+                        d-flex
+                        flex-column
+                        justify-content-center
+                        gap-2"
+                    variants={animateParent}
+                    initial="hidden"
+                    animate={ isInView ? "show" : "" }
+                    ref={colRef}
                 >
                     <motion.div
                         className="d-flex
-                        justify-content-center
-                        align-items-center
-                        bg-neonBlue
-                        rounded-5"
+                            justify-content-center
+                            align-items-center
+                            bg-neonBlue
+                            rounded-5"
                         style={{ height: "100px" }}
                         variants={animateChild}
                     >
@@ -48,10 +47,10 @@ export default function Projects({refProps}) {
                                 <motion.div
                                     key={index}
                                     className="
-                                    bg-darkBlue 
-                                    text-white 
-                                    rounded-5
-                                    p-5"
+                                        bg-darkBlue 
+                                        text-white 
+                                        rounded-5
+                                        p-5"
                                     variants={animateChild}
                                 >
                                     <a href={path}>
@@ -73,8 +72,8 @@ export default function Projects({refProps}) {
                             )
                         })
                     }
-                </Col>
-            </motion.div>
+                </motion.div>
+            </Row>
         </Container>
     )
 }

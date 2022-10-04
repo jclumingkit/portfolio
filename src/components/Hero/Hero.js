@@ -72,29 +72,26 @@ export default function Hero({refProps}) {
                         gap-2"
                     >
                         <div className="h-50 
-                            d-flex gap-2"
+                            d-flex 
+                            gap-2"
                         >
                             <motion.div
-                                className="
-                                    w-50 
+                                className="w-50 
                                     p-3
                                     rounded-5
                                     bg-neonBlue 
-                                    text-darkBlue
-                                "
+                                    text-darkBlue"
                                 onClick={() => handleScrollTo(0)}
                                 variants={animateChild}
                             >
                                 <h4>PROJECTS</h4>
                             </motion.div>
                             <motion.div
-                                className="
-                                    w-50 
+                                className="w-50 
                                     p-3
                                     rounded-5
                                     bg-pastelGreen 
-                                    text-darkBlue
-                                "
+                                    text-darkBlue"
                                 onClick={() => handleScrollTo(1)}
                                 variants={animateChild}
                             >
@@ -102,13 +99,11 @@ export default function Hero({refProps}) {
                             </motion.div>
                         </div>
                         <motion.div
-                                className="
-                                    h-50
+                                className="h-50
                                     p-3
                                     rounded-5
                                     bg-goldenYellow 
-                                    text-darkBlue
-                                "
+                                    text-darkBlue"
                                 onClick={() => handleScrollTo(2)}
                                 variants={animateChild}
                         >
