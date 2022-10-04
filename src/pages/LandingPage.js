@@ -5,6 +5,7 @@ import { Container } from 'react-bootstrap';
 import Hero from '../components/Hero/Hero';
 import Projects from '../components/Projects/Projects';
 import TechStack from '../components/TechStack/TechStack';
+import ContactForm from '../components/ContactForm/ContactForm';
 
 // Utils
 import BackToTopButton from '../components/Utils/BackToTopButton/BackToTopButton';
@@ -18,7 +19,7 @@ function LandingPage() {
             <Hero refProps={sectionRef} />
             <Projects refProps={sectionRef} />
             <TechStack refProps={sectionRef} />
-
+            <ContactForm refProps={sectionRef} />
 
             <BackToTopButton />
             <ScrollYProgress />
