@@ -114,7 +114,7 @@ export default function ContactForm({refProps}) {
                                         p-md-2"
                                 >
                                     <ReCAPTCHA
-                                        sitekey="6Lf7A1UiAAAAAMnW-aOgpkZiKJBDVpNMKxrge01q"
+                                        sitekey="6LfAFFUiAAAAAC2ri1_TX2oHrzz1PPbgt6K0S51A"
                                         onChange={(e) => setMessageInvalid(false)}
                                     />
                                     <Button 
