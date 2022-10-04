@@ -12,9 +12,9 @@ export default function Hero({refProps}) {
     const handleScrollTo = (idx) => refProps.current[idx].scrollIntoView({ behavior: 'smooth' });
 
     return(
-        <Container className="p-3 p-md-5"
+        <Container className="p-3 p-md-5 section"
         >
-            <Row className="h-100">
+            <Row className="w-100 h-100">
                 <motion.div
                     className="col
                         d-flex
@@ -95,7 +95,7 @@ export default function Hero({refProps}) {
                                 onClick={() => handleScrollTo(1)}
                                 variants={animateChild}
                             >
-                                <h4>SKILLS</h4>
+                                <h4>TECH STACK</h4>
                             </motion.div>
                         </div>
                         <motion.div

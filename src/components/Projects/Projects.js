@@ -14,10 +14,10 @@ export default function Projects({refProps}) {
 
     return(
         <Container
-            className="p-3 p-md-5"
+            className="p-3 p-md-5 section"
             ref={(ref) => refProps.current[0] = ref }    
         >
-            <Row className="h-100 my-auto"
+            <Row className="w-100 h-100"
             >
                 <motion.div 
                     className="col
@@ -39,7 +39,13 @@ export default function Projects({refProps}) {
                         style={{ height: "100px" }}
                         variants={animateChild}
                     >
-                        <h1 className="text-darkBlue">Projects</h1>
+                        <h1 
+                            className="
+                                section-title
+                                text-darkBlue"
+                        >
+                            Projects
+                        </h1>
                     </motion.div> 
 
                     {   projects.map(({title, description, path, tech}, index) => {

@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap';
 // Components
 import Hero from '../components/Hero/Hero';
 import Projects from '../components/Projects/Projects';
+import TechStack from '../components/TechStack/TechStack';
 
 // Utils
 import BackToTopButton from '../components/Utils/BackToTopButton/BackToTopButton';
@@ -16,6 +17,7 @@ function LandingPage() {
         <Container className="mx-auto">
             <Hero refProps={sectionRef} />
             <Projects refProps={sectionRef} />
+            <TechStack refProps={sectionRef} />
 
 
             <BackToTopButton />
