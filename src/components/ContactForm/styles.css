@@ -16,3 +16,14 @@ label {
     border: 0;
     background-color: #FEDB39;
 }
+
+.btn-contact:disabled {
+    width: 180px;
+    height: 60px;
+    color: #001054;
+    font-size: 24px;
+    font-weight: 700;
+    border-radius: 30px;
+    border: 0;
+    background-color: #FEDB39;
+}

@@ -15,7 +15,7 @@ export default function ContactForm({refProps}) {
         senderMessage: ''
     });
     const [isEmailSent, setIsEmailSent] = useState(false);
-    const [messageInvalid, setMessageInvalid] = useState(false);
+    const [messageInvalid, setMessageInvalid] = useState(true);
 
     const handleFormData = (e) => {
         e.preventDefault();
@@ -115,7 +115,7 @@ export default function ContactForm({refProps}) {
                                 >
                                     <ReCAPTCHA
                                         sitekey="6LfAFFUiAAAAAC2ri1_TX2oHrzz1PPbgt6K0S51A"
-                                        onChange={(e) => setMessageInvalid(false)}
+                                        onChange={() => setMessageInvalid(false)}
                                     />
                                     <Button 
                                         variant="primary" 
