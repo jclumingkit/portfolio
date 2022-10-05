@@ -10,5 +10,5 @@
 
 .stack-container:hover {
     transform: scale(1.1);
-    box-shadow: 2px 2px #D800A6;
+    box-shadow: 5px 5px #D800A6;
 }

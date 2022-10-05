@@ -1,29 +1,34 @@
 input {
     height: 50px;
 }
+
+textarea {
+    box-shadow: 5px 10px #001054;
+}
+
 label {
     font-size: 20px;
-    color: rgba(41, 51, 71, 0.65);
+    color: #001054;
 }
 
 .btn-contact {
     width: 180px;
     height: 60px;
-    color: #001054;
+    color: #FEDB39;
     font-size: 24px;
     font-weight: 700;
     border-radius: 30px;
     border: 0;
-    background-color: #FEDB39;
+    background-color: #001054;
 }
 
 .btn-contact:disabled {
     width: 180px;
     height: 60px;
-    color: #001054;
+    color: #FEDB39;
     font-size: 24px;
     font-weight: 700;
     border-radius: 30px;
     border: 0;
-    background-color: #FEDB39;
+    background-color: #001054;
 }

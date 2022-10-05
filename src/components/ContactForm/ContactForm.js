@@ -38,23 +38,22 @@ export default function ContactForm({refProps}) {
         });
     }
 
+    const handleChangeInputBoxShadow = (element, onFocus) => {
+        element.boxShadow = `5px 10px ${ onFocus ? '#D800A6' :  '#001054' }`; 
+    }
+
 
     return(
         <Container
-            className="
-                p-3 
-                p-md-5 
-                section"
+            className="section"
             ref={(ref) => refProps.current[2] = ref }    
         >
             <Row 
                 className="
+                    w-100 h-100
                     justify-content-center
-                    bg-white
-                    rounded-5
                     p-3
-                    p-md-5
-                    border-goldenYellow"
+                    p-md-5"
             >
                 { 
                     isEmailSent ? 
@@ -62,17 +61,35 @@ export default function ContactForm({refProps}) {
                     :
                     <motion.div 
                         xl={10}
-                        className="col rounded-5"
+                        className="
+                            col
+                            bg-goldenYellow
+                            text-darkBlue
+                            rounded-5
+                            p-3
+                            p-md-5
+                            bs-dark"
                     >
-                        <h1 className="text-center mb-5">
-                            Thanks for taking your time to reach out.
-                            What do you want to talk about?
-                        </h1>
+                        <div
+                            className="
+                                bg-pastelGreen
+                                text-darkBlue
+                                rounded-5
+                                mb-5
+                                p-3
+                                p-md-5
+                                bs-dark"
+                        >
+                            <h3 className="text-center">
+                                Thanks for taking your time to reach out.
+                                What do you want to talk about?
+                            </h3>
+                        </div>
                         <Form 
                             onSubmit={(e => handleFormData(e))}
                             className="p-2"
                         >
-                            <Row>
+                            <Row className="mb-3">
                                 <Col 
                                     md={6}
                                     className="p-2"
@@ -83,7 +100,9 @@ export default function ContactForm({refProps}) {
                                         value={formData.senderName}
                                         required
                                         onChange={(e) => setFormData({...formData, senderName: e.target.value})}
-                                        className="p-2"
+                                        onFocus={(e) => handleChangeInputBoxShadow(e.target.style, true)}
+                                        onBlur={(e) => handleChangeInputBoxShadow(e.target.style, false)}
+                                        className="p-2 bs-dark rounded-5"
                                     />
                                 </Col>
                                 <Col 
@@ -96,7 +115,9 @@ export default function ContactForm({refProps}) {
                                         value={formData.senderEmail}
                                         required
                                         onChange={(e) => setFormData({...formData, senderEmail: e.target.value})}
-                                        className="p-2"
+                                        onFocus={(e) => handleChangeInputBoxShadow(e.target.style, true)}
+                                        onBlur={(e) => handleChangeInputBoxShadow(e.target.style, false)}
+                                        className="p-2 bs-dark rounded-5"
                                     />
                                 </Col>
                             </Row>
@@ -111,7 +132,9 @@ export default function ContactForm({refProps}) {
                                         value={formData.senderMessage}
                                         required
                                         onChange={(e) => setFormData({...formData, senderMessage: e.target.value})}
-                                        className="p-2"
+                                        onFocus={(e) => handleChangeInputBoxShadow(e.target.style, true)}
+                                        onBlur={(e) => handleChangeInputBoxShadow(e.target.style, false)}
+                                        className="p-2 bs-dark rounded-5"
                                     />
                                 </Col>
                             </Row>

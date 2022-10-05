@@ -66,17 +66,22 @@
 
 /* box shadow */
 .bs-pink {
-    box-shadow: 5px 10px #D800A6;
+    box-shadow: 10px 10px #D800A6;
 }
 
 .bs-dark {
-    box-shadow: 5px 10px #001054;
+    box-shadow: 10px 10px #001054;
 }
 
 .bs-neonBlue {
-    box-shadow: 5px 10px #31E1F7;
+    box-shadow: 10px 10px #31E1F7;
 }
 
 .bs-goldenYellow {
-    box-shadow: 5px 10px #FEDB39;
+    box-shadow: 10px 10px #FEDB39;
+}
+
+/* text-shadow */
+.ts-goldenYellow {
+    text-shadow: 5px 5px #FEDB39;
 }
