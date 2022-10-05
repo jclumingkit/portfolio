@@ -5,7 +5,7 @@ import { RiGitlabFill } from 'react-icons/ri';
 import { BsLinkedin, BsGithub } from 'react-icons/bs';
 import { motion } from "framer-motion";
 
-import { animateContainer, animateParent, animateChild, animateTextParent, animateTextChild, animateSubtitle } from './animateVariants';
+import { animateParent, animateChild, animateTextParent, animateTextChild, animateSubtitle } from './animateVariants';
 
 export default function Hero({refProps}) {
     const handleScrollTo = (idx) => refProps.current[idx].scrollIntoView({ behavior: 'smooth' });

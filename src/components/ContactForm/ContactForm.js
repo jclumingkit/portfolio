@@ -1,11 +1,11 @@
 import './styles.css';
 import keys from './emailKeys';
 
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { send } from 'emailjs-com';
 import ReCAPTCHA from "react-google-recaptcha";
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import EmailSentMessage from '../Utils/EmailSentMessage/EmailSentMessage';
 
