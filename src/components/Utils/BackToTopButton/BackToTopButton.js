@@ -31,8 +31,8 @@ export default function BackToTopButton() {
     return(
         <BsFillArrowUpSquareFill 
             className="back-to-top-btn 
-                text-pink 
-                bg-goldenYellow 
+                text-darkBlue 
+                bg-neonBlue 
                 rounded" 
             style={{ display: isVisible ? 'inline-block' : 'none' }}
             onClick={() => handleScrollToTop()}

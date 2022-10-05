@@ -43,6 +43,8 @@ export default function TechStack({refProps}) {
                         col-md-4
                         d-flex
                         align-items-center
+                        justify-content-center
+                        justify-content-md-start
                         p-3
                         rounded-5"
                     style={{ height: "300px" }}
@@ -50,7 +52,10 @@ export default function TechStack({refProps}) {
                    
                 >
                     <h1 
-                        className="text-darkBlue"
+                        className="
+                            text-center
+                            text-md-start
+                            text-darkBlue"
                         style={{ fontSize: "64px" }}
                     >
                         Tech <br /> Stack
