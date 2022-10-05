@@ -13,6 +13,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-image: linear-gradient(to bottom right, #5271FF, #1CD6CE);
+  animation: gradient 10s ease infinite; */
+  background-color: #5271FF;
 }
 
 code {

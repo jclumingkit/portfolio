@@ -1,12 +1,14 @@
 import './styles.css';
 import keys from './emailKeys';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { send } from 'emailjs-com';
 import ReCAPTCHA from "react-google-recaptcha";
+import { motion, useInView } from 'framer-motion';
 
 import EmailSentMessage from '../Utils/EmailSentMessage/EmailSentMessage';
+
 
 export default function ContactForm({refProps}) {
     const [formData, setFormData] = useState({
@@ -39,20 +41,29 @@ export default function ContactForm({refProps}) {
 
     return(
         <Container
-            className="p-3 p-md-5 section"
+            className="
+                p-3 
+                p-md-5 
+                section"
             ref={(ref) => refProps.current[2] = ref }    
         >
             <Row 
                 className="
                     justify-content-center
                     bg-white
-                    rounded-2"
+                    rounded-5
+                    p-3
+                    p-md-5
+                    border-goldenYellow"
             >
                 { 
                     isEmailSent ? 
                     <EmailSentMessage />
                     :
-                    <Col xl={10}>
+                    <motion.div 
+                        xl={10}
+                        className="col rounded-5"
+                    >
                         <h1 className="text-center mb-5">
                             Thanks for taking your time to reach out.
                             What do you want to talk about?
@@ -130,7 +141,7 @@ export default function ContactForm({refProps}) {
                                 </Col>
                             </Row>
                         </Form>
-                    </Col>
+                    </motion.div>
                 }
             </Row>
         </Container>

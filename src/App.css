@@ -56,7 +56,23 @@
 
 /* border */
 
+.border-goldenYellow {
+    border: 10px solid #FEDB39;
+}
+
 .rounded-2 {
     border-radius: 2rem;
 }
 
+/* box shadow */
+.bs-pink {
+    box-shadow: 5px 10px #D800A6;
+}
+
+.bs-dark {
+    box-shadow: 5px 10px #001054;
+}
+
+.bs-neonBlue {
+    box-shadow: 5px 10px #31E1F7;
+}

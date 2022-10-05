@@ -5,8 +5,7 @@ import { RiGitlabFill } from 'react-icons/ri';
 import { BsLinkedin, BsGithub } from 'react-icons/bs';
 import { motion } from "framer-motion";
 
-
-import { animateParent, animateChild } from './animateVariants'
+import { animateContainer, animateParent, animateChild, animateTextParent, animateTextChild, animateSubtitle } from './animateVariants';
 
 export default function Hero({refProps}) {
     const handleScrollTo = (idx) => refProps.current[idx].scrollIntoView({ behavior: 'smooth' });
@@ -14,7 +13,9 @@ export default function Hero({refProps}) {
     return(
         <Container className="p-3 p-md-5 section"
         >
-            <Row className="w-100 h-100">
+            <Row
+                className="w-100 h-100"
+            >
                 <motion.div
                     className="col
                         d-flex
@@ -35,13 +36,38 @@ export default function Hero({refProps}) {
                             p-3
                             p-xl-5
                             rounded-5
-                            bg-darkBlue"
+                            bg-darkBlue
+                            bs-pink
+                            m-2"
                         variants={animateChild}
                     >
-                        <div className="text-goldenYellow">
-                            <h1>hi, i'm jaycee</h1>
-                            <p className="text-neonBlue">full stack web developer</p>
-                        </div>
+                        <motion.div 
+                            className="text-goldenYellow"
+                            variants={animateTextParent}
+                            initial="hidden"
+                            animate="show"
+                        >
+                            <h1 className="hero-title">
+                                {
+                                    [...`hi, i'm jaycee`].map((letter, idx) => {
+                                        return(
+                                            <motion.span 
+                                                key={idx}
+                                                variants={animateTextChild}
+                                            >
+                                                {letter}
+                                            </motion.span>
+                                        )
+                                    })
+                                }
+                            </h1>
+                            <motion.p 
+                                className="text-neonBlue"
+                                variants={animateTextChild}
+                            >
+                                full stack web developer
+                            </motion.p>
+                        </motion.div>
                         <div>
                             <Stack direction="horizontal" gap={3}>
                                 <a href={`https://gitlab.com/lumingkit-juancarlos`}>
@@ -59,8 +85,6 @@ export default function Hero({refProps}) {
                                         <BsGithub size={32} />
                                     </span>
                                 </a>
-                                
-                                
                             </Stack>
                         </div>
                     </motion.div>
@@ -69,7 +93,7 @@ export default function Hero({refProps}) {
                     className="module 
                         d-flex
                         flex-column
-                        gap-2"
+                        gap-3"
                     >
                         <div className="h-50 
                             d-flex 
@@ -80,22 +104,34 @@ export default function Hero({refProps}) {
                                     p-3
                                     rounded-5
                                     bg-neonBlue 
-                                    text-darkBlue"
+                                    text-darkBlue
+                                    bs-dark"
                                 onClick={() => handleScrollTo(0)}
                                 variants={animateChild}
                             >
-                                <h4>PROJECTS</h4>
+                                <motion.h4
+                                    variants={animateSubtitle}
+                                    whileHover="hover"
+                                >
+                                    PROJECTS
+                                </motion.h4>
                             </motion.div>
                             <motion.div
                                 className="w-50 
                                     p-3
                                     rounded-5
                                     bg-pastelGreen 
-                                    text-darkBlue"
+                                    text-darkBlue
+                                    bs-dark"
                                 onClick={() => handleScrollTo(1)}
                                 variants={animateChild}
                             >
-                                <h4>TECH STACK</h4>
+                                <motion.h4
+                                    variants={animateSubtitle}
+                                    whileHover="hover"
+                                >
+                                    TECH STACK
+                                </motion.h4>
                             </motion.div>
                         </div>
                         <motion.div
@@ -103,11 +139,18 @@ export default function Hero({refProps}) {
                                     p-3
                                     rounded-5
                                     bg-goldenYellow 
-                                    text-darkBlue"
+                                    text-darkBlue
+                                    bs-dark"
                                 onClick={() => handleScrollTo(2)}
                                 variants={animateChild}
                         >
-                            <h1 style={{ fontSize: "36px" }}>CONTACT ME</h1>
+                            <motion.h1
+                                style={{ fontSize: "36px" }}
+                                variants={animateSubtitle}
+                                whileHover="hover"
+                            >
+                                CONTACT ME
+                            </motion.h1>
                         </motion.div>
                     </div>  
                 </motion.div>

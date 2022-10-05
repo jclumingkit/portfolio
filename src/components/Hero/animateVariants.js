@@ -21,3 +21,39 @@ export const animateChild = {
         }
     }
 }
+
+export const animateTextParent = {
+    hidden: {
+        opacity: 0
+    },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.12
+        }
+    }
+}
+
+export const animateTextChild = {
+    hidden: {
+        opacity: 0,
+        y: 10
+    },
+    show: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            type: 'spring',
+            ease: 'easeIn'
+        }
+    }
+}
+
+export const animateSubtitle = {
+    hover: {
+        scale: 0.9,
+        transition: {
+            type: 'spring'
+        }
+    }
+}

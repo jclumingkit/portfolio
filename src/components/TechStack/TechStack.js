@@ -14,7 +14,10 @@ export default function TechStack({refProps}) {
 
     return(
         <Container
-            className="p-3 p-md-5 section"
+            className="
+                p-3 
+                p-md-5 
+                section"
             ref={(ref) => refProps.current[1] = ref }
         >
             <motion.div 
@@ -23,7 +26,11 @@ export default function TechStack({refProps}) {
                     w-100 
                     h-100
                     align-items-center
-                    justify-content-evenly"
+                    justify-content-evenly
+                    bg-pastelGreen
+                    p-2
+                    rounded-5
+                    bs-dark"
                 variants={animateParent}
                 initial="hidden"
                 animate={ isInView ? "show" : "" }
@@ -36,7 +43,6 @@ export default function TechStack({refProps}) {
                         col-md-4
                         d-flex
                         align-items-center
-                        bg-pastelGreen
                         p-3
                         rounded-5"
                     style={{ height: "300px" }}
@@ -50,10 +56,10 @@ export default function TechStack({refProps}) {
                         Tech <br /> Stack
                     </h1>
                 </motion.div>
-                <Col xl={6}
+                <Col xs={12} md={8} xl={6}
                     className="
                         d-flex
-                        justify-content-center
+                        justify-content-around
                         gap-2
                         p-3"
                 >

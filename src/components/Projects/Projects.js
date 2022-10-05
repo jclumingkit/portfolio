@@ -24,7 +24,7 @@ export default function Projects({refProps}) {
                         d-flex
                         flex-column
                         justify-content-center
-                        gap-2"
+                        gap-3"
                     variants={animateParent}
                     initial="hidden"
                     animate={ isInView ? "show" : "" }
@@ -35,7 +35,8 @@ export default function Projects({refProps}) {
                             justify-content-center
                             align-items-center
                             bg-neonBlue
-                            rounded-5"
+                            rounded-5
+                            bs-dark"
                         style={{ height: "100px" }}
                         variants={animateChild}
                     >
@@ -56,7 +57,8 @@ export default function Projects({refProps}) {
                                         bg-darkBlue 
                                         text-white 
                                         rounded-5
-                                        p-5"
+                                        p-5
+                                        bs-neonBlue"
                                     variants={animateChild}
                                 >
                                     <a href={path}>
