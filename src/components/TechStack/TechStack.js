@@ -3,12 +3,13 @@ import techStacks from './data';
 
 import { useRef } from 'react';
 import { motion, useInView } from "framer-motion";
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Col } from 'react-bootstrap';
 
+import { animateParent, animateChild, animateParent2, animateChild2 } from './animateVariants';
 
 export default function TechStack({refProps}) {
-    const rowRef = useRef(null);
-    const isInView = useInView(rowRef, { once: true });
+    const colRef = useRef(null);
+    const isInView = useInView(colRef, { once: true });
 
 
     return(
@@ -16,12 +17,18 @@ export default function TechStack({refProps}) {
             className="p-3 p-md-5 section"
             ref={(ref) => refProps.current[1] = ref }
         >
-            <Row 
-                className="w-100 
+            <motion.div 
+                className="
+                    row
+                    w-100 
                     h-100
                     align-items-center
                     justify-content-evenly"
-                ref={rowRef}
+                variants={animateParent}
+                initial="hidden"
+                animate={ isInView ? "show" : "" }
+                ref={colRef}
+                
             >
                 <motion.div 
                     className="
@@ -33,6 +40,8 @@ export default function TechStack({refProps}) {
                         p-3
                         rounded-5"
                     style={{ height: "300px" }}
+                    variants={animateChild}
+                   
                 >
                     <h1 
                         className="text-darkBlue"
@@ -41,16 +50,22 @@ export default function TechStack({refProps}) {
                         Tech <br /> Stack
                     </h1>
                 </motion.div>
-                <motion.div
+                <Col xl={6}
                     className="
-                        col
-                        col-xl-6
                         d-flex
                         justify-content-center
                         gap-2
                         p-3"
                 >
-                    <Row className="w-100 justify-content-evenly">
+                    <motion.div 
+                        className="
+                            row
+                            w-100 
+                            justify-content-evenly"
+                        variants={animateParent2}
+                        initial="hidden"
+                        animate={ isInView ? "show" : "" }
+                    >
                         { 
                             techStacks.map((stack, idx) => {
                                 return(
@@ -70,6 +85,7 @@ export default function TechStack({refProps}) {
                                                 bg-darkBlue
                                                 text-neonBlue
                                                 rounded-3"
+                                            variants={animateChild2}
                                         >
                                             {stack}
                                         </motion.div>
@@ -78,9 +94,9 @@ export default function TechStack({refProps}) {
                             })
 
                         }
-                    </Row>
-                </motion.div>
-            </Row>
+                    </motion.div>
+                </Col>
+            </motion.div>
         </Container>
     )
 }
