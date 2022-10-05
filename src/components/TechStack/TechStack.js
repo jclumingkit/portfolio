@@ -89,7 +89,7 @@ export default function TechStack({refProps}) {
                                             className="
                                                 stack-container
                                                 bg-darkBlue
-                                                text-neonBlue
+                                                text-goldenYellow
                                                 rounded-3"
                                             variants={animateChild2}
                                         >
