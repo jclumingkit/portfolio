@@ -138,7 +138,7 @@ export default function ContactForm({refProps}) {
                                     />
                                 </Col>
                             </Row>
-                            <Row>
+                            <Row className="mt-3">
                                 <Col
                                     className="
                                         d-flex
