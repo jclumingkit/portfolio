@@ -102,7 +102,7 @@ export default function ContactForm({refProps}) {
                                         onChange={(e) => setFormData({...formData, senderName: e.target.value})}
                                         onFocus={(e) => handleChangeInputBoxShadow(e.target.style, true)}
                                         onBlur={(e) => handleChangeInputBoxShadow(e.target.style, false)}
-                                        className="p-2 bs-dark rounded-5"
+                                        className="p-3 bs-dark rounded-5"
                                     />
                                 </Col>
                                 <Col 
@@ -117,7 +117,7 @@ export default function ContactForm({refProps}) {
                                         onChange={(e) => setFormData({...formData, senderEmail: e.target.value})}
                                         onFocus={(e) => handleChangeInputBoxShadow(e.target.style, true)}
                                         onBlur={(e) => handleChangeInputBoxShadow(e.target.style, false)}
-                                        className="p-2 bs-dark rounded-5"
+                                        className="p-3 bs-dark rounded-5"
                                     />
                                 </Col>
                             </Row>
@@ -134,7 +134,7 @@ export default function ContactForm({refProps}) {
                                         onChange={(e) => setFormData({...formData, senderMessage: e.target.value})}
                                         onFocus={(e) => handleChangeInputBoxShadow(e.target.style, true)}
                                         onBlur={(e) => handleChangeInputBoxShadow(e.target.style, false)}
-                                        className="p-2 bs-dark rounded-5"
+                                        className="p-3 bs-dark rounded-5"
                                     />
                                 </Col>
                             </Row>
