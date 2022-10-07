@@ -1,7 +1,7 @@
 import './styles.css';
 import keys from './emailKeys';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { send } from 'emailjs-com';
 import ReCAPTCHA from "react-google-recaptcha";
@@ -18,10 +18,16 @@ export default function ContactForm({refProps}) {
     });
     const [isEmailSent, setIsEmailSent] = useState(false);
     const [messageInvalid, setMessageInvalid] = useState(true);
+    const sendBtn = useRef(null)
 
     const handleFormData = (e) => {
         e.preventDefault();
 
+        // disable send button while waiting for server response, and update Send to Sending
+        setMessageInvalid(true);
+        sendBtn.current.innerText = 'Sending';
+
+        // send message to email
         send(
             keys.serviceID,
             keys.templateID,
@@ -156,8 +162,9 @@ export default function ContactForm({refProps}) {
                                         type="submit"
                                         className="mt-2"
                                         disabled={messageInvalid}
+                                        ref={sendBtn}
                                     >
-                                        Submit
+                                        Send
                                     </Button>
                                 </Col>
                             </Row>
