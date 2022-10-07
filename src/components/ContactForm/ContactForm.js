@@ -152,11 +152,9 @@ export default function ContactForm({refProps}) {
                                         onChange={() => setMessageInvalid(false)}
                                     />
                                     <Button 
-                                        variant="primary" 
+                                        variant="contact" 
                                         type="submit"
-                                        className="
-                                            btn-contact
-                                            mt-2"
+                                        className="mt-2"
                                         disabled={messageInvalid}
                                     >
                                         Submit

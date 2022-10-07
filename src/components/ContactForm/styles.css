@@ -23,12 +23,11 @@ label {
 }
 
 .btn-contact:disabled {
-    width: 180px;
-    height: 60px;
     color: #FEDB39;
-    font-size: 24px;
-    font-weight: 700;
-    border-radius: 30px;
-    border: 0;
     background-color: #001054;
+}
+
+.btn-contact:hover {
+    color: #FEDB39 !important;
+    background-color: #001054 !important;
 }
